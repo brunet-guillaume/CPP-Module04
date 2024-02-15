@@ -6,7 +6,7 @@
 /*   By: gbrunet <gbrunet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 14:18:10 by gbrunet           #+#    #+#             */
-/*   Updated: 2024/02/15 14:43:29 by gbrunet          ###   ########.fr       */
+/*   Updated: 2024/02/15 15:14:08 by gbrunet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -122,6 +122,13 @@ int	main(void) {
 		std::cout << "\e[0;32mkits : (type: " << kits.getType() << ")\e[0m" << std::endl;
 		kits.printIdeas();
 		delete kitten;
+	}
+	std::cout << "\e[0;36m------------------- Test 5 -------------------\e[0m" << std::endl;
+	std::cout << "\e[0;36m- (you need to uncomment lines in main.cpp) --\e[0m" << std::endl;
+	{
+//		Animal *test = new Animal;
+
+//		delete test;
 	}
 	return (0);
 }

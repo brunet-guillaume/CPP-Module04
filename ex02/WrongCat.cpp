@@ -1,51 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.cpp                                            :+:      :+:    :+:   */
+/*   WrongCat.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gbrunet <gbrunet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 14:37:11 by gbrunet           #+#    #+#             */
-/*   Updated: 2024/02/15 14:32:22 by gbrunet          ###   ########.fr       */
+/*   Updated: 2024/02/14 16:19:06 by gbrunet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include "Cat.hpp"
+#include "WrongCat.hpp"
 
-Cat::Cat() {
-	std::cout << "\e[0;35mCat: Default constructor called\e[0m" << std::endl;
-	this->type = "Cat";
-	this->brain = new Brain;
+WrongCat::WrongCat() {
+	std::cout << "\e[0;35mWrongCat: Default constructor called\e[0m" << std::endl;
+	this->type = "WrongCat";
 }
 
-Cat::Cat(const Cat &cpy) {
+WrongCat::WrongCat(const WrongCat &cpy) {
 	std::cout << "\e[0;35mCat: Copy constructor called\e[0m" << std::endl;
 	*this = cpy;
 }
 
-Cat::~Cat() {
-	std::cout << "\e[0;35mCat: Destructor called\e[0m" << std::endl;
-	delete this->brain;
+WrongCat::~WrongCat() {
+	std::cout << "\e[0;35mWrongCat: Destructor calledi\e[0m" << std::endl;
 }
 
-Cat	&Cat::operator=(const Cat &rhs) {
-	std::cout << "\e[0;35mCat: Copy assignment operator called\e[0m" << std::endl;
-	if (this == &rhs)
-		return (*this);
-	this->type = rhs.type;
-	this->brain = new Brain(*rhs.brain);
+WrongCat	&WrongCat::operator=(const WrongCat &rhs) {
+	std::cout << "\e[0;35mWrongCat: Copy assignment operator called\e[0m" << std::endl;
+	(void)rhs;
 	return (*this);
 }
 
-void	Cat::makeSound(void) const {
+void	WrongCat::makeSound(void) {
 	std::cout << "Meow. Meeeeooooooooow." << std::endl;
-}
-
-void	Cat::setIdea(unsigned int i, std::string str) {
-	this->brain->setIdea(i, str);
-}
-
-void	Cat::printIdeas(void) const {
-	this->brain->printIdeas();
 }

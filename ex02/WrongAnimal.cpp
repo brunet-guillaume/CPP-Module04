@@ -1,41 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.cpp                                         :+:      :+:    :+:   */
+/*   WrongAnimal.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gbrunet <gbrunet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 14:13:08 by gbrunet           #+#    #+#             */
-/*   Updated: 2024/02/15 13:51:48 by gbrunet          ###   ########.fr       */
+/*   Updated: 2024/02/14 16:13:10 by gbrunet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include "Animal.hpp"
+#include "WrongAnimal.hpp"
 
-Animal::Animal() {
-	std::cout << "\e[0;35mAnimal: Default constructor called\e[0m" << std::endl;
+WrongAnimal::WrongAnimal() {
+	std::cout << "\e[0;35mWrongAnimal: Default constructor called\e[0m" << std::endl;
 }
 
-Animal::Animal(const Animal &cpy) {
-	std::cout << "\e[0;35mAnimal: Copy constructor called\e[0m" << std::endl;
+WrongAnimal::WrongAnimal(const WrongAnimal &cpy) {
+	std::cout << "\e[0;35mWrongAnimal: Copy constructor called\e[0m" << std::endl;
 	*this = cpy;
 }
 
-Animal::~Animal() {
-	std::cout << "\e[0;35mAnimal: Destructor called\e[0m" << std::endl;
+WrongAnimal::~WrongAnimal() {
+	std::cout << "\e[0;35mWrongAnimal: Destructor called\e[0m" << std::endl;
 }
 
-Animal &Animal::operator=(const Animal &rhs) {
-	std::cout << "\e[0;35mAnimal: Copy assignment operator called\e[0m" << std::endl;
+WrongAnimal &WrongAnimal::operator=(const WrongAnimal &rhs) {
+	std::cout << "\e[0;35mWrongAnimal: Copy assignment operator called\e[0m" << std::endl;
 	(void)rhs;
 	return (*this);
 }
 
-void	Animal::makeSound(void) const {
+void	WrongAnimal::makeSound(void) {
 	std::cout << "I'm no one, I don't make sound." << std::endl;
 }
 
-std::string	Animal::getType(void) const {
+std::string	WrongAnimal::getType(void) {
 	return (this->type);
 }
