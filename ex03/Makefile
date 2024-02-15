@@ -6,7 +6,7 @@
 #    By: gbrunet <gbrunet@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/14 14:06:15 by gbrunet           #+#    #+#              #
-#    Updated: 2024/02/15 16:02:22 by gbrunet          ###   ########.fr        #
+#    Updated: 2024/02/15 17:19:25 by gbrunet          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,9 +16,9 @@ CC = c++
 
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRC = main.cpp AMateria.cpp 
+SRC = main.cpp AMateria.cpp Ice.cpp Character.cpp Cure.cpp
 
-OBJ = main.o AMateria.o 
+OBJ = main.o AMateria.o Ice.o Character.o Cure.o
 
 all : $(NAME)
 

@@ -6,7 +6,7 @@
 /*   By: gbrunet <gbrunet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 15:42:29 by gbrunet           #+#    #+#             */
-/*   Updated: 2024/02/15 16:04:35 by gbrunet          ###   ########.fr       */
+/*   Updated: 2024/02/15 16:48:54 by gbrunet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,5 +44,5 @@ std::string const	&AMateria::getType() const {
 }
 
 void	AMateria::use(ICharacter &target) {
-	std::cout << "\e[0;32m* shoots an ice bolt at " << target.getName() << "*\e[0m" << std::endl;
+	std::cout << "\e[0;32m* " << this->type << " used on " << target.getName() << " *\e[0m" << std::endl;
 }
