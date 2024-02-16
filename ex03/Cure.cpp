@@ -6,7 +6,7 @@
 /*   By: gbrunet <gbrunet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 17:15:13 by gbrunet           #+#    #+#             */
-/*   Updated: 2024/02/15 18:32:06 by gbrunet          ###   ########.fr       */
+/*   Updated: 2024/02/16 10:39:10 by gbrunet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ Cure	&Cure::operator=(const Cure &rhs) {
 	std::cout << "\e[0;35mCure: Copy assignment operator called\e[0m" << std::endl;
 	if (this == &rhs)
 		return (*this);
+	this->type = rhs.type;
 	return (*this);
 }
 

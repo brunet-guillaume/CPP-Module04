@@ -6,7 +6,7 @@
 /*   By: gbrunet <gbrunet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 16:51:53 by gbrunet           #+#    #+#             */
-/*   Updated: 2024/02/15 17:04:30 by gbrunet          ###   ########.fr       */
+/*   Updated: 2024/02/16 12:49:33 by gbrunet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ class Character : public ICharacter {
 		void				equip(AMateria *m);
 		void				unequip(int idx);
 		void				use(int idx, ICharacter &target);
+		AMateria			*saveMateria(int idx);
 };
 
 #endif

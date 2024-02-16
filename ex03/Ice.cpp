@@ -6,7 +6,7 @@
 /*   By: gbrunet <gbrunet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 16:32:26 by gbrunet           #+#    #+#             */
-/*   Updated: 2024/02/15 18:32:13 by gbrunet          ###   ########.fr       */
+/*   Updated: 2024/02/16 10:38:55 by gbrunet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ Ice	&Ice::operator=(const Ice &rhs) {
 	std::cout << "\e[0;35mIce: Copy assignment operator called\e[0m" << std::endl;
 	if (this == &rhs)
 		return (*this);
+	this->type = rhs.type;
 	return (*this);
 }
 
