@@ -6,7 +6,7 @@
 /*   By: gbrunet <gbrunet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 14:18:10 by gbrunet           #+#    #+#             */
-/*   Updated: 2024/02/15 14:43:29 by gbrunet          ###   ########.fr       */
+/*   Updated: 2024/02/21 09:56:11 by gbrunet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -117,7 +117,7 @@ int	main(void) {
 		kitty.setIdea(13, "zzZZzzZZzzZZ");
 		std::cout << "\e[0;32mkitten : (type: " << kitten->getType() << ")\e[0m" << std::endl;
 		kitten->printIdeas();
-		std::cout << "\e[0;32mpuppy : (type: " << kitty.getType() << ")\e[0m" << std::endl;
+		std::cout << "\e[0;32mkitty : (type: " << kitty.getType() << ")\e[0m" << std::endl;
 		kitty.printIdeas();
 		std::cout << "\e[0;32mkits : (type: " << kits.getType() << ")\e[0m" << std::endl;
 		kits.printIdeas();
