@@ -6,7 +6,7 @@
 /*   By: gbrunet <gbrunet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 14:37:11 by gbrunet           #+#    #+#             */
-/*   Updated: 2024/02/15 14:24:22 by gbrunet          ###   ########.fr       */
+/*   Updated: 2024/02/22 10:02:05 by gbrunet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ Dog::Dog() {
 
 Dog::Dog(const Dog &cpy) {
 	std::cout << "\e[0;35mDog: Copy constructor called\e[0m" << std::endl;
+	this->brain = NULL;
 	*this = cpy;
 }
 
@@ -31,8 +32,8 @@ Dog::~Dog() {
 
 Dog	&Dog::operator=(const Dog &rhs) {
 	std::cout << "\e[0;35mDog: Copy assignment operator called\e[0m" << std::endl;
-	if (this == &rhs)
-		return (*this);
+	if (this->brain)
+		delete this->brain;
 	this->type = rhs.type;
 	this->brain = new Brain(*rhs.brain);
 	return (*this);

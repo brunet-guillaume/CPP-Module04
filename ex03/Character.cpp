@@ -6,7 +6,7 @@
 /*   By: gbrunet <gbrunet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 16:56:28 by gbrunet           #+#    #+#             */
-/*   Updated: 2024/02/16 13:17:08 by gbrunet          ###   ########.fr       */
+/*   Updated: 2024/02/22 09:47:17 by gbrunet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,9 @@ Character::Character(std::string name): name(name) {
 
 Character::Character(const Character &cpy) {
 	std::cout << "\e[0;35mCharacter: Copy constructor called\e[0m" << std::endl;
+	for (unsigned int i = 0; i < 4; i++) {
+		this->inventory[i] = NULL;
+	}
 	*this = cpy;
 }
 
@@ -42,9 +45,9 @@ Character::~Character() {
 
 Character	&Character::operator=(const Character &rhs) {
 	std::cout << "\e[0;35mCharacter: Copy assignment operator called\e[0m" << std::endl;
-	if (this == &rhs)
-		return (*this);
 	for (unsigned int i = 0; i < 4; i++) {
+		if (this->inventory[i])
+			delete this->inventory[i];
 		this->inventory[i] = NULL;
 		if (rhs.inventory[i]) {
 			this->inventory[i] = rhs.inventory[i]->clone();

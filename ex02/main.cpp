@@ -6,7 +6,7 @@
 /*   By: gbrunet <gbrunet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 14:18:10 by gbrunet           #+#    #+#             */
-/*   Updated: 2024/02/21 09:57:36 by gbrunet          ###   ########.fr       */
+/*   Updated: 2024/02/22 10:01:29 by gbrunet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -121,6 +121,8 @@ int	main(void) {
 		kitty.printIdeas();
 		std::cout << "\e[0;32mkits : (type: " << kits.getType() << ")\e[0m" << std::endl;
 		kits.printIdeas();
+		// kits has a brain with idea, if deep copy is 0k, there is no leaks.
+		kits = kitty;
 		delete kitten;
 	}
 	std::cout << "\e[0;36m------------------- Test 5 -------------------\e[0m" << std::endl;

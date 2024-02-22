@@ -6,7 +6,7 @@
 /*   By: gbrunet <gbrunet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 15:37:03 by gbrunet           #+#    #+#             */
-/*   Updated: 2024/02/16 13:40:58 by gbrunet          ###   ########.fr       */
+/*   Updated: 2024/02/22 09:48:13 by gbrunet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,9 +36,17 @@ int	main(void) {
 		me->use(0, *bob);
 		me->use(1, *bob);
 
+		// Deleting inventory items if exist in me before assigning a copy of bob inventory check (valgrind);
+		*(Character *)me = *(Character *)bob;
+		
+		IMateriaSource	*src_2 = new MateriaSource();
+		// Deleting saved materias if exist in src before assigning a copy of src_2 inventory check (valgrind);
+		*(MateriaSource *)src = *(MateriaSource *)src_2;
+
 		delete bob;
 		delete me;
 		delete src;
+		delete src_2;
 	}
 	std::cout << "\e[0;36m------------------- Test 2 -------------------\e[0m" << std::endl;
 	{

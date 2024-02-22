@@ -6,7 +6,7 @@
 /*   By: gbrunet <gbrunet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 18:32:39 by gbrunet           #+#    #+#             */
-/*   Updated: 2024/02/16 11:28:21 by gbrunet          ###   ########.fr       */
+/*   Updated: 2024/02/22 09:41:56 by gbrunet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,10 +35,16 @@ MateriaSource::~MateriaSource() {
 
 MateriaSource	&MateriaSource::operator=(const MateriaSource &rhs) {
 	std::cout << "\e[0;35mMateriaSource: Copy assignment operator called\e[0m" << std::endl;
-	if (this == &rhs)
-		return (*this);
+	
 	for (unsigned int i = 0; i < 4; i++)
-		this->saved_materias[i] = rhs.saved_materias[i];
+	{
+		if (this->saved_materias[i])
+			delete this->saved_materias[i];
+		this->saved_materias[i] = NULL;
+		if (rhs.saved_materias[i]) {
+			this->saved_materias[i] = rhs.saved_materias[i]->clone();
+		}
+	}
 	return (*this);
 }
 
